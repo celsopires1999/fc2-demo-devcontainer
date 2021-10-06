@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  demo:
+    container_name: my-test-demo
+    build:
+      context: ./
+      dockerfile: Dockerfile  
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: sh run.sh
+    ports:
+      - 8080:8080
+      - 8005:8005
+      
